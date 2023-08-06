@@ -29,8 +29,16 @@ let down_abacus_num_5 = 0
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_1 = pos - 1
+        //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
+        }
+        if (document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png";
+        }
+        //if bead 5 white
+        if (document.getElementById(`beadD_${pos + 3}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 3}`).src = "./img/bead.png"
         }
       }
 
@@ -39,8 +47,13 @@ let down_abacus_num_5 = 0
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_1 = pos - 1
+        //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
+        }
+        //if bead 5 white
+        if (document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png"
         }
       }
 
@@ -79,8 +92,17 @@ let down_abacus_num_5 = 0
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_2 = pos + 3
+        //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
+        }
+        //
+        if (document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png"
+        }
+        //if bead 5 white
+        if (document.getElementById(`beadD_${pos + 3}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 3}`).src = "./img/bead.png"
         }
       }
       else if (pos === 8) {
@@ -90,8 +112,13 @@ let down_abacus_num_5 = 0
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_2 = pos + 12
+        //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
+        }
+        //if bead 5 white
+        if (document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png"
         }
       }
       else if (pos === 9) {
@@ -117,7 +144,7 @@ let down_abacus_num_5 = 0
       }
       ///////////////////////////////////////////////////////////////////////////
       else if (pos === 11) {
-        document.getElementById(`beadD_${pos - 4}`).src = "./img/bead.png";
+        document.getElementById(`beadD_${pos + 4}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
@@ -125,14 +152,19 @@ let down_abacus_num_5 = 0
         down_abacus_num_3 = 0
       }
       else if (pos === 12) {
-        // document.getElementById(`beadD_${pos - 4}`).src = "./img/bead.png";
-        // document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
-        // document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_3 = pos + 88
+        //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
+        }
+        if (document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png";
+        }
+        //if bead 5 white
+        if (document.getElementById(`beadD_${pos + 3}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 3}`).src = "./img/bead.png"
         }
       }
       else if (pos === 13) {
@@ -142,8 +174,13 @@ let down_abacus_num_5 = 0
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_3 = pos + 187
+        //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
+        }
+        //if bead 5 white
+        if (document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_white.png") {
+          document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png"
         }
       }
       else if (pos === 14) {
@@ -207,6 +244,6 @@ document.addEventListener('click', function(e) {
   console.log('PLUSRANDOM', plusRandom)
   if (plusRandom === up_abacus_num + down_abacus_num_1 + down_abacus_num_2 + down_abacus_num_3 + down_abacus_num_4 + down_abacus_num_5) {
     alert("ถวกตร้วมมมมม!")
-    window.reload
+    windows.reload
   }
 });

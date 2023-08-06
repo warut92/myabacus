@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Abacus</title>
+    <link rel="icon" type="image/x-icon" href="./img/bead.png">
+    <style media="screen">
+    p, span {
+      text-align: center;
+      font-size: 50px;
+    }
+    </style>
+  </head>
+  <body>
+    <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
+    <p id="abacusNum">0</p>
+    <hr>
+    <img id="bead_10" src="./img/bead.png" alt="" onclick="moveDown(10, 50000)">
+    <img id="bead_8" src="./img/bead.png" alt="" onclick="moveDown(8, 5000)">
+    <img id="bead_6" src="./img/bead.png" alt="" onclick="moveDown(6, 500)">
+    <img id="bead_4" src="./img/bead.png" alt="" onclick="moveDown(4, 50)">
+    <img id="bead_2" src="./img/bead.png" alt="" onclick="moveDown(2, 5)">
+    <br>
+    <img id="bead_9" src="./img/bead_white.png" alt="" onclick="moveUp(9, -50000)">
+    <img id="bead_7" src="./img/bead_white.png" alt="" onclick="moveUp(7, -5000)">
+    <img id="bead_5" src="./img/bead_white.png" alt="" onclick="moveUp(5, -500)">
+    <img id="bead_3" src="./img/bead_white.png" alt="" onclick="moveUp(3, -50)">
+    <img id="bead_1" src="./img/bead_white.png" alt="" onclick="moveUp(1, -5)"><br>
+    <!---------------------------------------------------------------------------------->
+    <hr>
+    <img id="beadD_" src="./img/bead_white.png" alt="" onclick="moveBead()">
+    <img id="beadD_" src="./img/bead_white.png" alt="" onclick="moveBead()">
+    <img id="beadD_11" src="./img/bead_white.png" alt="" onclick="moveBead(3, 11, -100)">
+    <img id="beadD_6" src="./img/bead_white.png" alt="" onclick="moveBead(2, 6, -10)">
+    <img id="beadD_1" src="./img/bead_white.png" alt="" onclick="moveBead(1, 1, -1)">
+    <br>
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_12" src="./img/bead.png" alt="" onclick="moveBead(3, 12, 100)">
+    <img id="beadD_7" src="./img/bead.png" alt="" onclick="moveBead(2, 7, 10)">
+    <img id="beadD_2" src="./img/bead.png" alt="" onclick="moveBead(1, 2, 1)">
+    <br>
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_13" src="./img/bead.png" alt="" onclick="moveBead(3, 13)">
+    <img id="beadD_8" src="./img/bead.png" alt="" onclick="moveBead(2, 8, 10)">
+    <img id="beadD_3" src="./img/bead.png" alt="" onclick="moveBead(1, 3, 1)">
+    <br>
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_14" src="./img/bead.png" alt="" onclick="moveBead(3, 14)">
+    <img id="beadD_9" src="./img/bead.png" alt="" onclick="moveBead(2, 9)">
+    <img id="beadD_4" src="./img/bead.png" alt="" onclick="moveBead(1, 4, 1)"><br>
+    <br>
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_" src="./img/bead.png" alt="" onclick="moveBead()">
+    <img id="beadD_15" src="./img/bead.png" alt="" onclick="moveBead(3, 15)">
+    <img id="beadD_10" src="./img/bead.png" alt="" onclick="moveBead(2, 10)">
+    <img id="beadD_5" src="./img/bead.png" alt="" onclick="moveBead(1, 5, 1)"><br>
+    <hr>
+  </body>
+  <script src="./abacus.js" charset="utf-8"></script>
+</html>

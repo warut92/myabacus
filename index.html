@@ -21,7 +21,8 @@
     <center>
     <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
     <span id="abacusNum">0</span>
-    <button style="display:none" type="button" ontouchstart="startRandom();displayButton()">Next</button>
+    <button style="display:none" type="button" ontouchstart="startRandom();displayButton();window.location.reload();" onclick="resetAbacus()">Next</button>
+    <!-- <button type="button" onclick="resetAbacus()">reset</button> -->
     <hr>
     <img id="bead_10" src="./img/bead.png" alt="" ontouchstart="moveDown(10, 50000)">
     <img id="bead_8" src="./img/bead.png" alt="" ontouchstart="moveDown(8, 5000)">
@@ -66,6 +67,10 @@
     <img id="beadD_10" src="./img/bead.png" alt="" ontouchstart="moveBead(2, 10)">
     <img id="beadD_5" src="./img/bead.png" alt="" ontouchstart="moveBead(1, 5, 1)"><br>
     <hr>
+    <audio id="myAudio">
+  <source src="sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
     <p id="yourPoints"></p>
   </body>
   <script src="./abacus.js" charset="utf-8"></script>

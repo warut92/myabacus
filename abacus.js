@@ -9,8 +9,13 @@ let down_abacus_num_3 = 0
 let down_abacus_num_4 = 0
 let down_abacus_num_5 = 0
 
+// sound
+var sound_succes = document.getElementById("myAudioSucces");
+var sound_bead = document.getElementById("myAudioBead");
+
   // down frame
   function moveBead(row, pos, val) {
+    sound_bead.play()
     console.log("position",pos,"value",val);
     if (document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png") {
       down_abacus_num = 0
@@ -205,6 +210,7 @@ let down_abacus_num_5 = 0
 
 // up frame
 function moveDown(pos, val) {
+  sound_bead.play()
   if (pos === 2) {
     if (document.getElementById(`bead_${pos}`).src === "./img/bead_white.png") {
       up_abacus_num_1 = 0
@@ -237,6 +243,7 @@ function moveDown(pos, val) {
 }
 
 function moveUp(pos, val) {
+  sound_bead.play()
   if (pos === 1) {
     document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
     document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
@@ -288,8 +295,7 @@ function startRandom() {
 
 }
 startRandom()
-// sound
-var sound = document.getElementById("myAudio");
+
 document.addEventListener('touchstart', function(e) {
   calculate()
   let plusRandom = random1 + random2
@@ -299,7 +305,7 @@ document.addEventListener('touchstart', function(e) {
       for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.color = "yellow";
       }
-    sound.play()
+    sound_succes.play()
     displayButton()
   }
 });

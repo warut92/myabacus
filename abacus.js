@@ -5,7 +5,6 @@ let down_abacus_num_3 = 0
 let down_abacus_num_4 = 0
 let down_abacus_num_5 = 0
 
-
   // down frame
   function moveBead(row, pos, val) {
     console.log("position",pos,"value",val);
@@ -86,9 +85,6 @@ let down_abacus_num_5 = 0
         down_abacus_num_2 = 0
       }
       else if (pos === 7) {
-        // document.getElementById(`beadD_${pos - 4}`).src = "./img/bead.png";
-        // document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
-        // document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_2 = pos + 3
@@ -106,8 +102,6 @@ let down_abacus_num_5 = 0
         }
       }
       else if (pos === 8) {
-        // document.getElementById(`beadD_${pos - 4}`).src = "./img/bead.png";
-        // document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
@@ -168,8 +162,6 @@ let down_abacus_num_5 = 0
         }
       }
       else if (pos === 13) {
-        document.getElementById(`beadD_${pos - 4}`).src = "./img/bead.png";
-        document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
@@ -184,7 +176,6 @@ let down_abacus_num_5 = 0
         }
       }
       else if (pos === 14) {
-        document.getElementById(`beadD_${pos - 4}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
@@ -216,10 +207,14 @@ function moveDown(pos, val) {
 }
 
 function moveUp(pos, val) {
-  document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
-  document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
-  up_abacus_num = up_abacus_num + val
+  if (document.getElementById(`bead_${pos}`).src = "./img/bead_white.png") {
+    up_abacus_num = 5
+  }
+    document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
+    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    up_abacus_num = up_abacus_num + val
 }
+
 
 function calculate() {
   document.getElementById('abacusNum').innerHTML = up_abacus_num + down_abacus_num_1 + down_abacus_num_2 + down_abacus_num_3 + down_abacus_num_4 + down_abacus_num_5
@@ -234,16 +229,32 @@ function startRandom() {
   random2 = Math.floor(Math.random() * 100);
   document.getElementById("random_1").innerHTML = random1
   document.getElementById("random_2").innerHTML = random2
+  let nodeList = document.querySelectorAll('span');
+    for (let i = 0; i < nodeList.length; i++) {
+      nodeList[i].style.color = "white";
+    }
+
 }
 startRandom()
 
-document.addEventListener('click', function(e) {
+document.addEventListener('touchstart', function(e) {
   calculate()
-  console.log("calculate!");
   let plusRandom = random1 + random2
   console.log('PLUSRANDOM', plusRandom)
   if (plusRandom === up_abacus_num + down_abacus_num_1 + down_abacus_num_2 + down_abacus_num_3 + down_abacus_num_4 + down_abacus_num_5) {
-    alert("ถวกตร้วมมมมม!")
-    windows.reload
+    let nodeList = document.querySelectorAll('span');
+      for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.color = "yellow";
+      }
+    displayButton()
   }
 });
+
+function displayButton() {
+  let btn = document.querySelector('button');
+  if (btn.style.display === "none") {
+    btn.style.display = "block"
+  } else {
+    btn.style.display = "none"
+  }
+}

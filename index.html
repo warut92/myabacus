@@ -3,17 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>My Abacus</title>
+     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
     <link rel="icon" type="image/x-icon" href="./img/bead.png">
+    <link rel="apple-touch-icon" href="./img/bead.png">
     <style media="screen">
-    p, span {
+    body {
+      background-color: #2b2f37
+    }
+    p, span, button {
+      color: white;
       text-align: center;
-      font-size: 50px;
+      font-size: 60px;
     }
     </style>
   </head>
   <body>
+    <center>
     <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
     <span id="abacusNum">0</span>
+    <button style="display:none" type="button" ontouchstart="startRandom();displayButton()">Next</button>
     <hr>
     <img id="bead_10" src="./img/bead.png" alt="" ontouchstart="moveDown(10, 50000)">
     <img id="bead_8" src="./img/bead.png" alt="" ontouchstart="moveDown(8, 5000)">
@@ -58,6 +66,7 @@
     <img id="beadD_10" src="./img/bead.png" alt="" ontouchstart="moveBead(2, 10)">
     <img id="beadD_5" src="./img/bead.png" alt="" ontouchstart="moveBead(1, 5, 1)"><br>
     <hr>
+    <p id="yourPoints"></p>
   </body>
   <script src="./abacus.js" charset="utf-8"></script>
 </html>

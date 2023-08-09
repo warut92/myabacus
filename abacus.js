@@ -11,11 +11,9 @@ let down_abacus_num_5 = 0
 
 // sound
 var sound_succes = document.getElementById("myAudioSucces");
-var sound_bead = document.getElementById("myAudioBead");
 
   // down frame
   function moveBead(row, pos, val) {
-    sound_bead.play()
     console.log("position",pos,"value",val);
     if (document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png") {
       down_abacus_num = 0
@@ -148,8 +146,8 @@ var sound_bead = document.getElementById("myAudioBead");
       ///////////////////////////////////////////////////////////////////////////
       else if (pos === 11) {
         document.getElementById(`beadD_${pos + 4}`).src = "./img/bead.png";
-        document.getElementById(`beadD_${pos - 3}`).src = "./img/bead.png";
-        document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
+        document.getElementById(`beadD_${pos + 3}`).src = "./img/bead.png";
+        document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         down_abacus_num_3 = 0
@@ -210,7 +208,6 @@ var sound_bead = document.getElementById("myAudioBead");
 
 // up frame
 function moveDown(pos, val) {
-  sound_bead.play()
   if (pos === 2) {
     if (document.getElementById(`bead_${pos}`).src === "./img/bead_white.png") {
       up_abacus_num_1 = 0
@@ -243,7 +240,6 @@ function moveDown(pos, val) {
 }
 
 function moveUp(pos, val) {
-  sound_bead.play()
   if (pos === 1) {
     document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
     document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
@@ -296,6 +292,7 @@ function startRandom() {
 }
 startRandom()
 
+//check answer
 document.addEventListener('touchstart', function(e) {
   calculate()
   let plusRandom = random1 + random2
@@ -310,13 +307,23 @@ document.addEventListener('touchstart', function(e) {
   }
 });
 
+function getPoints() {
+  if (localStorage.my_points) {
+    localStorage.my_points = Number(localStorage.my_points)+1;
+  } else {
+    localStorage.my_points = 1;
+  }
+}
+
+document.getElementById('yourPoints').innerHTML = "Your points: " + localStorage.my_points;
+console.log('LOCALSTORAGE.MY_POINTS', localStorage.my_points)
+
 function displayButton() {
   let btn = document.querySelector('button');
   if (btn.style.display === "none") {
     btn.style.display = "block"
   } else {
     btn.style.display = "none"
-
   }
 }
 

@@ -208,12 +208,12 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = 0
+        down_abacus_num_4 = 0
       }
       else if (pos === 17) {
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 983
+        down_abacus_num_4 = pos + 983
         //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
@@ -230,7 +230,7 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 1982
+        down_abacus_num_4 = pos + 1982
         //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
@@ -245,7 +245,7 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 2981
+        down_abacus_num_4 = pos + 2981
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         }
@@ -256,7 +256,7 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 3980
+        down_abacus_num_4 = pos + 3980
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           // document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         }
@@ -268,12 +268,12 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = 0
+        down_abacus_num_5 = 0
       }
       else if (pos === 22) {
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 9978
+        down_abacus_num_5 = pos + 9978
         //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
@@ -290,7 +290,7 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 19977
+        down_abacus_num_5 = pos + 19977
         //if bead 4 white
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
@@ -305,7 +305,7 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 29976
+        down_abacus_num_5 = pos + 29976
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         }
@@ -316,7 +316,7 @@ var sound_succes = document.getElementById("myAudioSucces");
         document.getElementById(`beadD_${pos - 2}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos - 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
-        down_abacus_num_3 = pos + 39975 // 40000 (val) - 25
+        down_abacus_num_5 = pos + 39975 // 40000 (val) - 25
         if (document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_white.png") {
           // document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         }
@@ -396,9 +396,11 @@ function calculate() {
 let random1 = 0
 let random2 = 0
 
+let units = 1000
+
 function startRandom() {
-  random1 = Math.floor(Math.random() * 100);
-  random2 = Math.floor(Math.random() * 100);
+  random1 = Math.floor(Math.random() * units);
+  random2 = Math.floor(Math.random() * units);
   document.getElementById("random_1").innerHTML = random1
   document.getElementById("random_2").innerHTML = random2
   let nodeList = document.querySelectorAll('span');
@@ -432,7 +434,7 @@ function getPoints() {
   }
 }
 
-document.getElementById('yourPoints').innerHTML = "Your points: " + localStorage.my_points;
+document.getElementById('yourPoints').innerHTML = "🪙 " + localStorage.my_points;
 console.log('LOCALSTORAGE.MY_POINTS', localStorage.my_points)
 
 function displayButton() {
@@ -475,3 +477,15 @@ function displayButton() {
 //     document.getElementById('beadD_15').src = "./img/bead.png";
 //
 // }
+
+function displaySettingBtn() {
+  let abacus_frame = document.getElementById('abacusFrame');
+  let setting_menu = document.getElementById('settingMenu');
+  if (setting_menu.style.display === "none") {
+    setting_menu.style.display = "block"
+    abacus_frame.style.display = "none"
+  } else {
+    setting_menu.style.display = "none"
+    abacus_frame.style.display = "block"
+  }
+}

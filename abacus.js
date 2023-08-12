@@ -447,7 +447,7 @@ document.addEventListener('touchstart', function(e) {
 //get num coins via localStorage
 function getCoins() {
   if (localStorage.my_coins) {
-    localStorage.my_coins = Number(localStorage.my_coins) + 30;
+    localStorage.my_coins = Number(localStorage.my_coins);
   } else {
     localStorage.my_coins = 1;
   }

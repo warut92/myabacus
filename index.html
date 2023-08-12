@@ -21,7 +21,7 @@
 
     span {
       color: white;
-      font-size: 60px;
+      font-size: 80px;
     }
 
     #button {
@@ -35,9 +35,10 @@
     }
 
     #settingBtn {
-      font-size: 30px;
+      font-size: 40px;
       color: #2b2f37
     }
+    
     #settingMenu {
       font-size: 50px;
       color: yellow;
@@ -56,7 +57,9 @@
 
 <body>
   <center>
-    <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
+    <span id="info">
+      <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
+    </span>
     <span id="abacusNum">0</span>
     <button id="button" style="display:none" type="button" ontouchstart="displayButton();window.location.reload();getCoins();">Next!</button>
     <div id="abacusFrame">
@@ -120,6 +123,7 @@
       <p style="font-size: 40px">I creat this web app just for fun ^^/. The great game style abacus/soroban app is Simple Soroban, but it can be installed only on Android! Now I use iOS ><. I have to creat my own one with my style. See my code from GitHub. I'm still learing how to code.</p>
       <br>
     </div>
+    <br>
     <button id="settingBtn" type="button" ontouchstart="displaySettingBtn()">SETTING</button>
     <br>
     <!-- sound -->

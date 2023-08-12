@@ -380,25 +380,22 @@ function moveUp(pos, val) {
   }
 }
 
+//display info
+let display_info = document.getElementById('info');
 function freeMode() {
-  let display_info = document.querySelectorAll('span');
-  for (let i = 0; i < display_info.length; i++) {
-    console.log(i);
-    if (display_info[0].style.display === "none") {
-      display_info[i].style.display = "none"
-      console.log("hi");
+    if (display_info.style.display === "none") {
+      display_info.style.display = "block"
+      window.location.reload()
     } else {
-      display_info[i].style.display = "block"
-      console.log("ho");
+      display_info.style.display = "none"
     }
-  }
 }
 
 let total_upper_abacus, total_lower_abacus
 function calculate() {
-  total_upper_abacus = upper_abacus_num_1 + upper_abacus_num_2 + upper_abacus_num_3 + upper_abacus_num_4 + upper_abacus_num_5
-  total_lower_abacus = lower_abacus_num_1 + lower_abacus_num_2 + lower_abacus_num_3 + lower_abacus_num_4 + lower_abacus_num_5
-  document.getElementById('abacusNum').innerHTML = total_upper_abacus + total_lower_abacus
+    total_upper_abacus = upper_abacus_num_1 + upper_abacus_num_2 + upper_abacus_num_3 + upper_abacus_num_4 + upper_abacus_num_5
+    total_lower_abacus = lower_abacus_num_1 + lower_abacus_num_2 + lower_abacus_num_3 + lower_abacus_num_4 + lower_abacus_num_5
+    document.getElementById('abacusNum').innerHTML = total_upper_abacus + total_lower_abacus
 }
 
 //random
@@ -406,20 +403,22 @@ let random1 = 0
 let random2 = 0
 let random3 = 0
 
-console.log(typeof localStorage.my_units);
-
-
 //function set units
-setUnits(localStorage.my_units)
 function setUnits(units) {
-  // Set Item
-  localStorage.setItem("my_units", units)
-  startRandom()
-}
+    // Set Item
+    localStorage.my_units = units
+    startRandom()
+  }
 
+//function random num
 startRandom()
 function startRandom() {
+  if (localStorage.my_units === undefined) {
+    console.log("localStorage.my_units is undefined");
+    localStorage.my_units = 10
+  }
   random1 = Math.floor(Math.random() * localStorage.my_units);
+  console.log('LOCALSTORAGE.MY_UNITS', typeof localStorage.my_units)
   random2 = Math.floor(Math.random() * localStorage.my_units);
   document.getElementById("random_1").innerHTML = random1
   document.getElementById("random_2").innerHTML = random2
@@ -432,15 +431,18 @@ function startRandom() {
 //check answer
 document.addEventListener('touchstart', function(e) {
   calculate()
-  let plusRandom = random1 + random2 + random3
-  console.log('PLUSRANDOM', plusRandom)
-  if (plusRandom === total_upper_abacus + total_lower_abacus) {
-    let nodeList = document.querySelectorAll('span');
+  if (display_info.style.display !== "none") {
+    let plusRandom = random1 + random2 + random3
+    console.log('PLUSRANDOM', plusRandom)
+    if (plusRandom === total_upper_abacus + total_lower_abacus) {
+      let nodeList = document.querySelectorAll('span');
       for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.color = "yellow";
       }
-    sound_succes.play()
-    displayButton()
+      sound_succes.play()
+      displayButton()
+    }
+    
   }
 });
 

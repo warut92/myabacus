@@ -442,7 +442,7 @@ document.addEventListener('touchstart', function(e) {
       sound_succes.play()
       displayButton()
     }
-    
+
   }
 });
 

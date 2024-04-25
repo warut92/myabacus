@@ -8,52 +8,7 @@
   <link rel="icon" type="image/x-icon" href="./img/bead.png">
   <link rel="apple-touch-icon" href="./img/bead.png">
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <style media="screen">
-    body {
-      background-color: #2b2f37
-    }
-
-    p,
-    button {
-      color: white;
-      text-align: center;
-      font-size: 60px;
-    }
-
-    span {
-      color: white;
-      font-size: 80px;
-    }
-
-    #button {
-      margin-top: 1px;
-      margin-right: 2px;
-      position: absolute;
-      color: red;
-      background-color: yellow;
-      top: 0;
-      right: 0;
-    }
-
-    #settingBtn {
-      font-size: 40px;
-      color: #2b2f37
-    }
-
-    #settingMenu {
-      font-size: 50px;
-      color: yellow;
-    }
-    #settingMenu > button {
-      font-size: 90px;
-      color: black;
-    }
-
-    #yourCoins {
-      text-align: left;
-      font-size: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -110,6 +65,7 @@
       <hr>
       <span id="yourCoins"></span>
     </div>
+    <poke></poke>
     <div id="settingMenu" style="display:none">
       <br>
       <h1>SETTING</h1>
@@ -124,6 +80,7 @@
       <p style="font-size: 40px">I creat this web app just for fun ^^/. The great game style abacus/soroban app is Simple Soroban, but it can be installed only on Android! Now I use iOS ><. I have to creat my own one with my style. See my code from GitHub. I'm still learing how to code.</p>
       <br>
     </div>
+
     <br>
     <button id="settingBtn" type="button" ontouchstart="displaySettingBtn()">SETTING</button>
     <br>
@@ -133,6 +90,8 @@
       Your browser does not support the audio element.
     </audio>
 </body>
+<script src="./getpokemon.js" charset="utf-8"></script>
 <script src="./abacus.js" charset="utf-8"></script>
+<!-- <script src="./getpokemon.js" charset="utf-8"></script> -->
 
 </html>

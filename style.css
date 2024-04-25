@@ -1,77 +1,60 @@
-@import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/K2D/K2D.css');
-@import url('https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@6/fonts/Kanit/Kanit.css');
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-@import 'https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@7/fonts/Sarabun/Sarabun.css';
-* {
-  font-family: 'Sarabun', sans-serif;
+body {
+  background-color: #2b2f37
 }
 
-/* body {
-  font-family: 'K2D', sans-serif;
+p,
+button {
+  color: white;
+  text-align: center;
+  font-size: 60px;
 }
 
-p, ol {
-  font-family: 'K2D', sans-serif;
-  font-size: 35px;
+span {
+  color: white;
+  font-size: 80px;
 }
 
-h1, h2, h3, div {
-  font-family: 'Kanit', sans-serif;
-  font-weight: normal;
-} */
-.remark-code, .remark-inline-code {
-  font-family: 'Ubuntu Mono';
-}
-.inverse {
-  background: #272822;
-  color: #777872;
-  text-shadow: 0 0 20px #333;
-}
-.inverse h1, .inverse h2 {
-  color: #f3f3f3;
-  line-height: 0.8em;
-}
-
-/* Two-column layout */
-.left-column {
-  color: #777;
-  width: 20%;
-  height: 92%;
-  float: left;
-}
-.left-column h2:last-of-type, .left-column h3:last-child {
-    color: #000;
-  }
-.right-column {
-  width: 70%;
-  float: right;
-  padding-top: 1em;
-}
-img {
-  width: 200px;
-  class: center;
-}
-
-// colors
-s { color: green }
-em { color: blue }
-
-.red {
+#button {
+  margin-top: 1px;
+  margin-right: 2px;
+  position: absolute;
   color: red;
-  font-size: 70px;
+  background-color: yellow;
+  top: 0;
+  right: 0;
 }
 
-/* Thanks to http://www.partage-it.com/animez-vos-presentations-remark-js/  (in French) */
-.remark-slide-container {
-  transition: opacity 0.5s ease-out;
-  opacity: 0;
+#settingBtn {
+  font-size: 40px;
+  color: #2b2f37
 }
 
-.remark-visible {
-  transition: opacity 0.5s ease-out;
-  opacity: 1;
+#settingMenu {
+  font-size: 50px;
+  color: yellow;
+}
+#settingMenu > button {
+  font-size: 90px;
+  color: black;
 }
 
-.remark-fading {
-  z-index: 9;
+#yourCoins {
+  text-align: left;
+  font-size: 40px;
+}
+
+
+#mydiv {
+  border: solid 1px white;
+  border-radius: 5px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  color: #f1f1f1;
+  border: solid 1px white;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 }

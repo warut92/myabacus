@@ -441,21 +441,24 @@ document.addEventListener('touchstart', function(e) {
       }
       sound_succes.play()
       displayButton()
+      //ฟังก์ชันสุ่ม Pokemon
+      add()
     }
-
   }
 });
 
 //get num coins via localStorage
 function getCoins() {
   if (localStorage.my_coins) {
+    console.log('getCoins() +1');
     localStorage.my_coins = Number(localStorage.my_coins) + 1;
   } else {
+    console.log('getCoins() 1');
     localStorage.my_coins = 1;
   }
 }
 //output my_coins from localStorage
-document.getElementById('yourCoins').innerHTML = "🪙 " + localStorage.my_coins;
+document.getElementById('yourCoins').innerHTML = "🪙 " + (parseInt(localStorage.my_coins) + 1);
 
 //display menu button
 function displayButton() {
@@ -481,3 +484,4 @@ function displaySettingBtn() {
     abacus_frame.style.display = "block"
   }
 }
+console.log("abacus ",POINT);

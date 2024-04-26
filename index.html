@@ -13,6 +13,7 @@
 
 <body>
   <center>
+    <span id="touchTimes">0</span>
     <span id="info">
       <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
     </span>
@@ -20,17 +21,17 @@
     <button id="button" style="display:none" type="button" ontouchstart="displayButton();window.location.reload();getCoins();">Next!</button>
     <div id="abacusFrame">
       <hr>
-      <img id="bead_10" src="./img/bead.png" alt="" ontouchstart="moveDown(10, 50000)">
-      <img id="bead_8" src="./img/bead.png" alt="" ontouchstart="moveDown(8, 5000)">
-      <img id="bead_6" src="./img/bead.png" alt="" ontouchstart="moveDown(6, 500)">
-      <img id="bead_4" src="./img/bead.png" alt="" ontouchstart="moveDown(4, 50)">
-      <img id="bead_2" src="./img/bead.png" alt="" ontouchstart="moveDown(2, 5)">
+      <img id="beadU_10" src="./img/bead.png" alt="" ontouchstart="moveDown(10, 50000)">
+      <img id="beadU_8" src="./img/bead.png" alt="" ontouchstart="moveDown(8, 5000)">
+      <img id="beadU_6" src="./img/bead.png" alt="" ontouchstart="moveDown(6, 500)">
+      <img id="beadU_4" src="./img/bead.png" alt="" ontouchstart="moveDown(4, 50)">
+      <img id="beadU_2" src="./img/bead.png" alt="" ontouchstart="moveDown(2, 5)">
       <br>
-      <img id="bead_9" src="./img/bead_white.png" alt="" ontouchstart="moveUp(9, 0)">
-      <img id="bead_7" src="./img/bead_white.png" alt="" ontouchstart="moveUp(7, 0)">
-      <img id="bead_5" src="./img/bead_white.png" alt="" ontouchstart="moveUp(5, 0)">
-      <img id="bead_3" src="./img/bead_white.png" alt="" ontouchstart="moveUp(3, 0)">
-      <img id="bead_1" src="./img/bead_white.png" alt="" ontouchstart="moveUp(1, 0)"><br>
+      <img id="beadU_9" src="./img/bead_white.png" alt="" ontouchstart="moveUp(9, 0)">
+      <img id="beadU_7" src="./img/bead_white.png" alt="" ontouchstart="moveUp(7, 0)">
+      <img id="beadU_5" src="./img/bead_white.png" alt="" ontouchstart="moveUp(5, 0)">
+      <img id="beadU_3" src="./img/bead_white.png" alt="" ontouchstart="moveUp(3, 0)">
+      <img id="beadU_1" src="./img/bead_white.png" alt="" ontouchstart="moveUp(1, 0)"><br>
       <!---------------------------------------------------------------------------------->
       <hr>
       <img id="beadD_21" src="./img/bead_white.png" alt="" ontouchstart="moveBead(21)">
@@ -63,8 +64,9 @@
       <img id="beadD_10" src="./img/bead.png" alt="" ontouchstart="moveBead(10, 40)">
       <img id="beadD_5" src="./img/bead.png" alt="" ontouchstart="moveBead(5, 4)"><br>
       <hr>
-      <span id="yourCoins"></span>
     </div>
+    <button id="clearBeads" type="button" ontouchstart="clearBeads()">Clear</button><br>
+      <span id="yourCoins"></span>
     <poke></poke>
     <div id="settingMenu" style="display:none">
       <br>

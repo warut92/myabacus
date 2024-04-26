@@ -2,8 +2,7 @@ body {
   background-color: #2b2f37
 }
 
-p,
-button {
+p {
   color: white;
   text-align: center;
   font-size: 60px;
@@ -15,6 +14,7 @@ span {
 }
 
 #button {
+  font-size: 60px;
   margin-top: 1px;
   margin-right: 2px;
   position: absolute;
@@ -43,6 +43,25 @@ span {
   font-size: 40px;
 }
 
+#clearBeads {
+  font-size: 60px;
+  margin-top: 1300px;
+  margin-right: 2px;
+  position: absolute;
+  color: red;
+  background-color: yellow;
+  top: 0;
+  right: 0;
+}
+
+#touchTimes {
+  font-size: 30px;
+  margin-top: 1px;
+  margin-left: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 #mydiv {
   border: solid 1px white;
@@ -53,8 +72,5 @@ span {
   display: flex;
   flex-wrap: wrap;
   color: #f1f1f1;
-  border: solid 1px white;
-  text-align: center;
-  line-height: 75px;
   font-size: 30px;
 }

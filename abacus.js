@@ -9,9 +9,34 @@ let lower_abacus_num_2 = 0
 let lower_abacus_num_3 = 0
 let lower_abacus_num_4 = 0
 let lower_abacus_num_5 = 0
+let total_upper_abacus, total_lower_abacus
+let touchTimes = 0
 
 // sound
 var sound_succes = document.getElementById("myAudioSucces");
+
+function clearBeads() {
+  abacusSumSetZero()
+  //bead down
+  //(ให้ i เท่ากับ 1; i น้อยกว่าหรือเท่ากับ 21; i เพิ่ม 5)
+  for (let i = 1; i <= 21; i += 5) {
+    document.getElementById(`beadD_${i}`).src = "./img/bead_white.png";
+    for (let i = 1; i <= 25; i++) {
+      if (i === 1 || i === 6 || i === 11 || i === 16 || i === 21) {
+          continue;
+      }
+      document.getElementById(`beadD_${i}`).src = "./img/bead.png";
+  }
+  //bead up
+  for (let i = 1; i <= 10; i += 2) {
+    document.getElementById(`beadU_${i}`).src = "./img/bead_white.png";
+  }
+  for (let i = 2; i <= 10; i += 2) {
+    document.getElementById(`beadU_${i}`).src = "./img/bead.png";
+  }
+}
+}
+
 
   // lower frame
   function moveBead(pos, val) {
@@ -322,31 +347,31 @@ var sound_succes = document.getElementById("myAudioSucces");
 // upper frame
 function moveDown(pos, val) {
   if (pos === 2) {
-    if (document.getElementById(`bead_${pos}`).src === "./img/bead_white.png") {
+    if (document.getElementById(`beadU_${pos}`).src === "./img/bead_white.png") {
       upper_abacus_num_1 = val - val
     }
-    document.getElementById(`bead_${pos - 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos - 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_1 = val
   }
   else if (pos === 4) {
-    document.getElementById(`bead_${pos - 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos - 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_2 = val
   }
   else if (pos === 6) {
-    document.getElementById(`bead_${pos - 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos - 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_3 = val
   }
   else if (pos === 8) {
-    document.getElementById(`bead_${pos - 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos - 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_4 = val
   }
   else if (pos === 10) {
-    document.getElementById(`bead_${pos - 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos - 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_5 = val
   }
 
@@ -354,28 +379,28 @@ function moveDown(pos, val) {
 
 function moveUp(pos, val) {
   if (pos === 1) {
-    document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos + 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_1 = val
   }
   else if (pos === 3) {
-    document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos + 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_2 = val
   }
   else if (pos === 5) {
-    document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos + 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_3 = val
   }
   else if (pos === 7) {
-    document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos + 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_4 = val
   }
   else if (pos === 9) {
-    document.getElementById(`bead_${pos + 1}`).src = "./img/bead.png";
-    document.getElementById(`bead_${pos}`).src = "./img/bead_white.png";
+    document.getElementById(`beadU_${pos + 1}`).src = "./img/bead.png";
+    document.getElementById(`beadU_${pos}`).src = "./img/bead_white.png";
     upper_abacus_num_5 = val
   }
 }
@@ -389,15 +414,31 @@ function freeMode() {
     } else {
       display_info.style.display = "none"
     }
+  }
+
+function abacusSumSetZero() {
+  upper_abacus_num_1 = 0
+  upper_abacus_num_2 = 0
+  upper_abacus_num_3 = 0
+  upper_abacus_num_4 = 0
+  upper_abacus_num_5 = 0
+
+  lower_abacus_num_1 = 0
+  lower_abacus_num_2 = 0
+  lower_abacus_num_3 = 0
+  lower_abacus_num_4 = 0
+  lower_abacus_num_5 = 0
+
+document.getElementById('abacusNum').innerHTML = "0"
 }
 
-let total_upper_abacus, total_lower_abacus
 function calculate() {
+  console.log("calculate");
     total_upper_abacus = upper_abacus_num_1 + upper_abacus_num_2 + upper_abacus_num_3 + upper_abacus_num_4 + upper_abacus_num_5
     total_lower_abacus = lower_abacus_num_1 + lower_abacus_num_2 + lower_abacus_num_3 + lower_abacus_num_4 + lower_abacus_num_5
     document.getElementById('abacusNum').innerHTML = total_upper_abacus + total_lower_abacus
-}
-
+  }
+  
 //random
 let random1 = 0
 let random2 = 0
@@ -427,13 +468,20 @@ function startRandom() {
       nodeList[i].style.color = "white";
     }
 }
+let clearBtn = document.getElementById("clearBeads")
+clearBtn.addEventListener('touchstart', (e) => {
+  abacusSumSetZero()
+})
 
 //check answer
-document.addEventListener('touchstart', function(e) {
+let abacusDiv = document.getElementById("abacusFrame")
+abacusDiv.addEventListener('touchstart', function(e) {
   calculate()
+  touchTimes++
+  document.getElementById("touchTimes").innerHTML = touchTimes
+
   if (display_info.style.display !== "none") {
     let plusRandom = random1 + random2 + random3
-    console.log('PLUSRANDOM', plusRandom)
     if (plusRandom === total_upper_abacus + total_lower_abacus) {
       let nodeList = document.querySelectorAll('span');
       for (let i = 0; i < nodeList.length; i++) {

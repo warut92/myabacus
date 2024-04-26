@@ -1,38 +1,51 @@
-//
+//รวมตัวแปร
+//ค่าคะแนน ที่นำมาจาก local storage ของ abacus.js
 let POINT = localStorage.my_coins
 console.log("abacus ", POINT);
-var i
-const I_ARR = []
+//ตัวแปรสุ่มตัวเลข สำหรับสร้าง id ของโปเกมอน
+var RANDOM_NUM
+//ตัวแปรสุ่มตัวเลข แบบอาร์เรย์ สำหรับนำมาเก็บข้อมูล
+const ID_ARR = []
+//api json ของ pokemon
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
 
+//ฟังก์ชันสุ่มตัวเลขสำหรับ สำหรับสร้าง id ของโปเกมอน
 var randomPokeID = function() {
     console.log("run randomPokeID");
-    i = Math.floor(Math.random() * 300);
-    I_ARR.push(i)
-    localStorage.setItem("pokeID", I_ARR);
+    //สุ่มในช่วง 0-300
+    RANDOM_NUM = Math.floor(Math.random() * 300);
+    //หากมีการรันฟังชันอีกให้นำ i นำมาเก็บข้อมูลในรูปแบบของอาร์เรย์
+    ID_ARR.push(RANDOM_NUM)
+    //เก็บข้อมูลใว้ที่ localStorage ของเบราว์เซอร์
+    localStorage.setItem("pokeID", ID_ARR);
     localStorage.setItem("pokeStorage", "yes");
 }
 
-//ตรวจว่า ถ้า local storage poke ID มีอยู่ ให้เพิ่ม ตัวเลขสุ่ม เข้าไปเก็บเป็น array
+//สร้างเงื่อนไข หากข้อมูลใว้ที่ localStorage ของเบราว์เซอร์ ไม่เท่ากับ null
+//ให้นำข้อมูลนั้น มาเก็บในรูปแบบอาร์เรย์ใน ID_ARR
 if (localStorage.getItem("pokeID") !== null) {
-    I_ARR.push(localStorage.getItem("pokeID").split(","))
+    ID_ARR.push(localStorage.getItem("pokeID").split(","))
   }
+  //ตั้งตัวแปรความยาวของข้อมูลใว้ที่ localStorage ของเบราว์เซอร์
   let lenLocalStorage = ""
   
-  //ตรวจว่า localstorage ของเรามีข้อมูลหรือไม่หากไม่
+  //ตรวจว่า localstorage ของเรามีข้อมูลหรือไม่ หากไม่ให้ส่งข้อความออกทาง console.log
   function checkStorage() {
     if (localStorage.getItem("pokeStorage") === "yes") {
       //ถ้ามีก็ให้โหลดข้อมูลออกมา
       console.log("storage y");
       localStoragePoke = localStorage.getItem("pokeID").split(",")
-      lenLocalStoragePoke = localStorage.getItem("pokeID").split(",").length
-      console.log("lenLocalStoragePoke",lenLocalStoragePoke);
+    //   lenLocalStoragePoke = localStorage.getItem("pokeID").split(",").length
     } else {
       console.log("storage n");
     }
   }
+  //รันฟังก์ชันตรวจ localstorage ทุกครั้งที่มีการเปิดไฟล์นี้
   checkStorage()
   
+  //ฟังก์ชันลบ tag ที่แสดงรูปภาพโปเกมอน
+  //โดยการลบนั้น remove() จะลบ Tag ก่อน แต่เนื่องจากต้องการลบ
+  //หลาย tag จึงใช้ loop ช่วย โดยการลบตามจำนวนของ pokeID (array)
   function delPoke() {
     let divRemove = document.getElementById("poke")
     if (divRemove !== null) {
@@ -42,7 +55,7 @@ if (localStorage.getItem("pokeID") !== null) {
     }
   }
 
-//สร้างตัวแปรที่เป็นฟังก์ชัน
+//ฟังก์ชันเรียกข้อมูล ของโปเกมอน แล้วจากนั้นนำแสดงออกหน้าจอ
 var creatPokemon = function() { 
     console.log("len",localStoragePoke);
     for (let i = 0; i < localStorage.getItem("pokeID").length; i++) {

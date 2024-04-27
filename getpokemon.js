@@ -1,17 +1,17 @@
 //รวมตัวแปร
 //ค่าคะแนน ที่นำมาจาก local storage ของ abacus.js
 let POINT = localStorage.my_coins
-console.log("abacus ", POINT);
 //ตัวแปรสุ่มตัวเลข สำหรับสร้าง id ของโปเกมอน
 var RANDOM_NUM
 //ตัวแปรสุ่มตัวเลข แบบอาร์เรย์ สำหรับนำมาเก็บข้อมูล
 const ID_ARR = []
 //api json ของ pokemon
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
+//sound when get pokemon
+var audioGetPoke = new Audio('pokesound.mp3');
 
 //ฟังก์ชันสุ่มตัวเลขสำหรับ สำหรับสร้าง id ของโปเกมอน
 var randomPokeID = function() {
-    console.log("run randomPokeID");
     //สุ่มในช่วง 0-300
     RANDOM_NUM = Math.floor(Math.random() * 300);
     //หากมีการรันฟังชันอีกให้นำ i นำมาเก็บข้อมูลในรูปแบบของอาร์เรย์
@@ -33,11 +33,9 @@ if (localStorage.getItem("pokeID") !== null) {
   function checkStorage() {
     if (localStorage.getItem("pokeStorage") === "yes") {
       //ถ้ามีก็ให้โหลดข้อมูลออกมา
-      console.log("storage y");
       localStoragePoke = localStorage.getItem("pokeID").split(",")
     //   lenLocalStoragePoke = localStorage.getItem("pokeID").split(",").length
     } else {
-      console.log("storage n");
     }
   }
   //รันฟังก์ชันตรวจ localstorage ทุกครั้งที่มีการเปิดไฟล์นี้
@@ -57,12 +55,10 @@ if (localStorage.getItem("pokeID") !== null) {
 
 //ฟังก์ชันเรียกข้อมูล ของโปเกมอน แล้วจากนั้นนำแสดงออกหน้าจอ
 var creatPokemon = function() { 
-    console.log("len",localStoragePoke);
     for (let i = 0; i < localStorage.getItem("pokeID").length; i++) {
       delPoke()
       let pokeID = localStorage.getItem("pokeID").split(",")[i]
       let url = baseURL + pokeID
-      console.log(url);
   
       fetch(url)
       .then(function(result) {
@@ -80,26 +76,24 @@ var creatPokemon = function() {
         var div = document.createElement('div');
         
         //สร้าง class สำหรับ css
-        div.className = 'flex-container';
         div.id = 'poke';
         
         //สร้าง textContent 
         let img = pokemon.sprites.other.showdown.front_default;
-        console.log(img);
         let imgTag = "<img src=\"" + img + "\"><\/img>"
-        div.innerHTML = imgTag + "<br>" + pokemon.name[0].toUpperCase() + pokemon.name.slice(1) + pokemon.id;
+        div.innerHTML = imgTag + "<br>" + pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
         
         //สร้าง div ใน body       
-        document.getElementsByTagName('poke')[0].appendChild(div);
+        document.getElementById("myPoke").appendChild(div);
       }
       }
+      audioGetPoke.play(); 
     }
-  
+
 function add() {
   POINT++
   console.log("point in add",POINT);
-  if (POINT % 5 === 0) {
-    console.log("POINT % 5 === 0 working");
+  if ((POINT % 5) === 0) {
     randomPokeID()
     creatPokemon()
   }
@@ -107,8 +101,5 @@ function add() {
 //สร้าง tag สำหรับแสดงโปเกมอน
 creatPokemon()
 
-function log() {
-    console.log('test');
-}
 
 

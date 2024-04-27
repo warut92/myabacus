@@ -13,7 +13,7 @@
 
 <body>
   <center>
-    <span id="touchTimes">0</span>
+    <span id="touchTimes"></span>
     <span id="info">
       <span id="random_1">0</span><span> + </span> <span id="random_2">0</span><span> = </span>
     </span>
@@ -65,26 +65,29 @@
       <img id="beadD_5" src="./img/bead.png" alt="" ontouchstart="moveBead(5, 4)"><br>
       <hr>
     </div>
-    <button id="clearBeads" type="button" ontouchstart="clearBeads()">Clear</button><br>
+    <button id="clearBeads" type="button" ontouchstart="clearBeads()">Reset</button><br>
       <span id="yourCoins"></span>
-    <poke></poke>
+    <div id="myPoke" class="flex-container"></div>
     <div id="settingMenu" style="display:none">
       <br>
-      <h1>SETTING</h1>
+      <h1>Instruction</h1>
+      <h2>How to play?</h2>
+      <p style="font-size: 40px">Now we support only additon. 1. Select unit that you want to practice. 2. If you calculate correctly, you get 1 coin, and every 5 coins, you will recieve 1 pokemon.</p>
       <h2>Set The Units</h2>
       <br>
       <button class="btnMenu" onclick="setUnits(10);">10</button>
       <button class="btnMenu" onclick="setUnits(100);">100</button>
       <button class="btnMenu" onclick="setUnits(1000);">1000</button>
       <button class="btnMenu" onclick="setUnits(10000);">10000</button><br>
+      <p style="font-size: 40px">You can freely calculate using free mode.</p>
       <button class="btnMenu" onclick="freeMode()">Free Mode</button>
       <h3>About MyAbacus!</h3>
-      <p style="font-size: 40px">I creat this web app just for fun ^^/. The great game style abacus/soroban app is Simple Soroban, but it can be installed only on Android! Now I use iOS ><. I have to creat my own one with my style. See my code from GitHub. I'm still learing how to code.</p>
+      <p style="font-size: 40px">I create this web app just for fun ^^/. The great game style abacus/soroban app is Simple Soroban, but it can be installed only on Android! Now I use iOS ><. I have to creat my own one with my style. See my code from <a href="">GitHub</a>. I'm still learing how to code.</p>
       <br>
     </div>
 
     <br>
-    <button id="settingBtn" type="button" ontouchstart="displaySettingBtn()">SETTING</button>
+    <button id="settingBtn" type="button" ontouchstart="displaySettingBtn()">Instruction</button>
     <br>
     <!-- sound -->
     <audio id="myAudioSucces">

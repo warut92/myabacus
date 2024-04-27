@@ -473,13 +473,15 @@ clearBtn.addEventListener('touchstart', (e) => {
   abacusSumSetZero()
 })
 
+
+
 //check answer
 let abacusDiv = document.getElementById("abacusFrame")
 abacusDiv.addEventListener('touchstart', function(e) {
   calculate()
   touchTimes++
   document.getElementById("touchTimes").innerHTML = touchTimes
-
+  
   if (display_info.style.display !== "none") {
     let plusRandom = random1 + random2 + random3
     if (plusRandom === total_upper_abacus + total_lower_abacus) {
@@ -488,7 +490,7 @@ abacusDiv.addEventListener('touchstart', function(e) {
         nodeList[i].style.color = "yellow";
       }
       sound_succes.play()
-      displayButton()
+      displayButton() 
       //ฟังก์ชันสุ่ม Pokemon
       add()
     }
@@ -505,8 +507,12 @@ function getCoins() {
     localStorage.my_coins = 1;
   }
 }
+//show coin's digit in the first time.
+if (localStorage.my_coins === undefined) {
+  localStorage.my_coins = 0
+}
 //output my_coins from localStorage
-document.getElementById('yourCoins').innerHTML = "🪙 " + (parseInt(localStorage.my_coins) + 1);
+document.getElementById('yourCoins').innerHTML = "🪙 " + localStorage.my_coins;
 
 //display menu button
 function displayButton() {
@@ -528,8 +534,7 @@ function displaySettingBtn() {
     abacus_frame.style.display = "none"
   } else {
     setting_menu.style.display = "none"
-    setting_button.innerHTML = "SETTING"
+    setting_button.innerHTML = "Instruction"
     abacus_frame.style.display = "block"
   }
 }
-console.log("abacus ",POINT);

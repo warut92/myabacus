@@ -226,10 +226,10 @@ function clearBeads() {
       }
       //-1000-/////////////////////////////////////////////////////////////////////////
       else if (pos === 16) {
-        document.getElementById(`beadD_${pos + 4}`).src = "./img/bead_yellow.png";
-        document.getElementById(`beadD_${pos + 3}`).src = "./img/bead_yellow.png";
-        document.getElementById(`beadD_${pos + 2}`).src = "./img/bead_yellow.png";
-        document.getElementById(`beadD_${pos + 1}`).src = "./img/bead_yellow.png";
+        document.getElementById(`beadD_${pos + 4}`).src = "./img/bead.png";
+        document.getElementById(`beadD_${pos + 3}`).src = "./img/bead.png";
+        document.getElementById(`beadD_${pos + 2}`).src = "./img/bead.png";
+        document.getElementById(`beadD_${pos + 1}`).src = "./img/bead.png";
         document.getElementById(`beadD_${pos}`).src = "./img/bead_white.png";
         lower_abacus_num_4 = 0
       }

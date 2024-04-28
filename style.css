@@ -26,7 +26,7 @@ span {
 }
 
 #settingBtn {
-  font-size: 40px;
+  font-size: 60px;
   color: #2b2f37
 }
 
@@ -34,6 +34,7 @@ span {
   font-size: 50px;
   color: yellow;
 }
+
 #settingMenu > button {
   font-size: 90px;
   color: black;
@@ -46,7 +47,7 @@ span {
 
 #clearBeads {
   font-size: 60px;
-  margin-top: 1300px;
+  margin-top: 1250px;
   margin-right: 2px;
   position: absolute;
   color: red;
@@ -80,11 +81,4 @@ span {
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-}
-
-.shadow {
-  -webkit-filter: drop-shadow(1px 1px 0 black)
-                  drop-shadow(-1px -1px 0 black);
-  filter: drop-shadow(1px 1px 0 yellow) 
-          drop-shadow(-1px -1px 0 black);
 }

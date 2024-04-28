@@ -74,26 +74,22 @@
       <h2>How to play?</h2>
       <p style="font-size: 40px">Now we support only additon. 1. Select unit that you want to practice. 2. If you calculate correctly, you get 1 coin, and every 5 coins, you will recieve 1 pokemon.</p>
       <h2>Set The Units</h2>
-      <br>
+      <p>Selelced unit: <span id="unitDisplay"></span></p>
       <button class="btnMenu" onclick="setUnits(10);">10</button>
       <button class="btnMenu" onclick="setUnits(100);">100</button>
       <button class="btnMenu" onclick="setUnits(1000);">1000</button>
       <button class="btnMenu" onclick="setUnits(10000);">10000</button><br>
       <p style="font-size: 40px">You can freely calculate using free mode.</p>
       <button class="btnMenu" onclick="freeMode()">Free Mode</button>
+      <br>
+      <button class="btnMenu" ontouchstart="displaySettingBtn()">Back</button>
       <h3>About MyAbacus!</h3>
       <p style="font-size: 40px">I create this web app just for fun ^^/. The great game style abacus/soroban app is Simple Soroban, but it can be installed only on Android! Now I use iOS ><. I have to creat my own one with my style. See my code from <a href="">GitHub</a>. I'm still learing how to code.</p>
       <br>
     </div>
-
     <br>
     <button id="settingBtn" type="button" ontouchstart="displaySettingBtn()">Instruction</button>
     <br>
-    <!-- sound -->
-    <audio id="myAudioSucces">
-      <source src="sound.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
 </body>
 <script src="./getpokemon.js" charset="utf-8"></script>
 <script src="./abacus.js" charset="utf-8"></script>

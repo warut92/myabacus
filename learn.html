@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Abacus</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+  <link rel="icon" type="image/x-icon" href="./img/bead.png">
+  <link rel="apple-touch-icon" href="./img/bead.png">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <center>
+    <span id="touchTimes"></span>
+    <span id="info">
+      <span id="num_1"></span><span id="mathSign"></span> <span id="num_2"></span><span> = </span>
+    </span>
+    <span id="abacusNum">0</span>
+    <button id="button" style="display:none" type="button" ontouchstart="displayButton();window.location.reload();getCoins();">Next!</button>
+    <div id="abacusFrame">
+      <hr>
+      <img id="beadU_10" src="./img/bead.png" alt="" ontouchstart="moveDown(10, 50000)">
+      <img id="beadU_8" src="./img/bead.png" alt="" ontouchstart="moveDown(8, 5000)">
+      <img id="beadU_6" src="./img/bead.png" alt="" ontouchstart="moveDown(6, 500)">
+      <img id="beadU_4" src="./img/bead.png" alt="" ontouchstart="moveDown(4, 50)">
+      <img id="beadU_2" src="./img/bead.png" alt="" ontouchstart="moveDown(2, 5)">
+      <br>
+      <img id="beadU_9" src="./img/bead_white.png" alt="" ontouchstart="moveUp(9, 0)">
+      <img id="beadU_7" src="./img/bead_white.png" alt="" ontouchstart="moveUp(7, 0)">
+      <img id="beadU_5" src="./img/bead_white.png" alt="" ontouchstart="moveUp(5, 0)">
+      <img id="beadU_3" src="./img/bead_white.png" alt="" ontouchstart="moveUp(3, 0)">
+      <img id="beadU_1" src="./img/bead_white.png" alt="" ontouchstart="moveUp(1, 0)"><br>
+      <!---------------------------------------------------------------------------------->
+      <hr>
+      <img id="beadD_21" src="./img/bead_white.png" alt="" ontouchstart="moveBead(21)">
+      <img id="beadD_16" src="./img/bead_white.png" alt="" ontouchstart="moveBead(16)">
+      <img id="beadD_11" src="./img/bead_white.png" alt="" ontouchstart="moveBead(11, -100)">
+      <img id="beadD_6" src="./img/bead_white.png" alt="" ontouchstart="moveBead(6, -10)">
+      <img id="beadD_1" src="./img/bead_white.png" alt="" ontouchstart="moveBead(1, -1)">
+      <br>
+      <img id="beadD_22" src="./img/bead.png" alt="" ontouchstart="moveBead(22, 10000)">
+      <img id="beadD_17" src="./img/bead.png" alt="" ontouchstart="moveBead(17, 1000)">
+      <img id="beadD_12" src="./img/bead.png" alt="" ontouchstart="moveBead(12, 100)">
+      <img id="beadD_7" src="./img/bead.png" alt="" ontouchstart="moveBead(7, 10)">
+      <img id="beadD_2" src="./img/bead.png" alt="" ontouchstart="moveBead(2, 1)">
+      <br>
+      <img id="beadD_23" src="./img/bead.png" alt="" ontouchstart="moveBead(23, 20000)">
+      <img id="beadD_18" src="./img/bead.png" alt="" ontouchstart="moveBead(18, 2000)">
+      <img id="beadD_13" src="./img/bead.png" alt="" ontouchstart="moveBead(13, 200)">
+      <img id="beadD_8" src="./img/bead.png" alt="" ontouchstart="moveBead(8, 20)">
+      <img id="beadD_3" src="./img/bead.png" alt="" ontouchstart="moveBead(3, 2)">
+      <br>
+      <img id="beadD_24" src="./img/bead.png" alt="" ontouchstart="moveBead(24, 30000)">
+      <img id="beadD_19" src="./img/bead.png" alt="" ontouchstart="moveBead(19, 3000)">
+      <img id="beadD_14" src="./img/bead.png" alt="" ontouchstart="moveBead(14, 300)">
+      <img id="beadD_9" src="./img/bead.png" alt="" ontouchstart="moveBead(9, 30)">
+      <img id="beadD_4" src="./img/bead.png" alt="" ontouchstart="moveBead(4, 3)"><br>
+      <br>
+      <img id="beadD_25" src="./img/bead.png" alt="" ontouchstart="moveBead(25, 40000)">
+      <img id="beadD_20" src="./img/bead.png" alt="" ontouchstart="moveBead(20, 4000)">
+      <img id="beadD_15" src="./img/bead.png" alt="" ontouchstart="moveBead(15, 400)">
+      <img id="beadD_10" src="./img/bead.png" alt="" ontouchstart="moveBead(10, 40)">
+      <img id="beadD_5" src="./img/bead.png" alt="" ontouchstart="moveBead(5, 4)"><br>
+      <hr>
+    </div>
+    <button id="clearBeads" type="button" ontouchstart="clearBeads()">Reset</button><br> 
+    <button id="lesson" type="button" ontouchstart="startLesson()">Lesson</button><br> 
+</body>
+
+<script src="./learn.js" charset="utf-8"></script>
+
+</html>

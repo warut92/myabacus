@@ -15,6 +15,7 @@ let touchTimes = 0
 
 // sound
 var sound_succes = new Audio('sound.mp3');
+var sound_press = new Audio('press.mp3');
 
 function clearBeads() {
   abacusSumSetZero()
@@ -480,6 +481,7 @@ clearBtn.addEventListener('touchstart', (e) => {
 //check answer
 let abacusDiv = document.getElementById("abacusFrame")
 abacusDiv.addEventListener('touchstart', function(e) {
+  sound_press.play()
   calculate()
   touchTimes++
   document.getElementById("touchTimes").innerHTML = touchTimes
